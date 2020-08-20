@@ -5,15 +5,10 @@
 //  Created by wenmei on 2020/8/19.
 //  Copyright © 2020 zezefamily. All rights reserved.
 //
-//颜色结构体
-typedef struct {
-    float red, green, blue, alpha;
-} Color;
-
 
 
 #import "ZZRender.h"
-
+#import "ZZShaderTypes.h"
 @implementation ZZRender
 {
     id<MTLDevice> _device;

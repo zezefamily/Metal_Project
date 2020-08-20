@@ -15,10 +15,12 @@
 		F427E48724ED824200D2772C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F427E48524ED824200D2772C /* LaunchScreen.storyboard */; };
 		F427E48A24ED824200D2772C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F427E48924ED824200D2772C /* main.m */; };
 		F427E49424ED82E300D2772C /* ZZRender.m in Sources */ = {isa = PBXBuildFile; fileRef = F427E49324ED82E300D2772C /* ZZRender.m */; };
+		F427E49824EEA6DA00D2772C /* ZZRender1.m in Sources */ = {isa = PBXBuildFile; fileRef = F427E49724EEA6DA00D2772C /* ZZRender1.m */; };
+		F427E49A24EEA7E200D2772C /* ZZShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = F427E49924EEA7E200D2772C /* ZZShader.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F427E47424ED823A00D2772C /* AppleMetalUseDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMetalUseDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F427E47424ED823A00D2772C /* MetalCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F427E47724ED823A00D2772C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F427E47824ED823A00D2772C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F427E47A24ED823A00D2772C /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -32,6 +34,10 @@
 		F427E48924ED824200D2772C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F427E49224ED82E300D2772C /* ZZRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZRender.h; sourceTree = "<group>"; };
 		F427E49324ED82E300D2772C /* ZZRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZRender.m; sourceTree = "<group>"; };
+		F427E49624EEA6DA00D2772C /* ZZRender1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZRender1.h; sourceTree = "<group>"; };
+		F427E49724EEA6DA00D2772C /* ZZRender1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZRender1.m; sourceTree = "<group>"; };
+		F427E49924EEA7E200D2772C /* ZZShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ZZShader.metal; sourceTree = "<group>"; };
+		F427E49B24EEAA3C00D2772C /* ZZShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZShaderTypes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +62,7 @@
 		F427E47524ED823A00D2772C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F427E47424ED823A00D2772C /* AppleMetalUseDemos.app */,
+				F427E47424ED823A00D2772C /* MetalCode.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +70,7 @@
 		F427E47624ED823A00D2772C /* AppleMetalUseDemos */ = {
 			isa = PBXGroup;
 			children = (
+				F427E49524EEA6C200D2772C /* Demo11 */,
 				F427E49024ED82CA00D2772C /* Demo00 */,
 				F427E47724ED823A00D2772C /* AppDelegate.h */,
 				F427E47824ED823A00D2772C /* AppDelegate.m */,
@@ -97,6 +104,17 @@
 			path = Render;
 			sourceTree = "<group>";
 		};
+		F427E49524EEA6C200D2772C /* Demo11 */ = {
+			isa = PBXGroup;
+			children = (
+				F427E49924EEA7E200D2772C /* ZZShader.metal */,
+				F427E49624EEA6DA00D2772C /* ZZRender1.h */,
+				F427E49724EEA6DA00D2772C /* ZZRender1.m */,
+				F427E49B24EEAA3C00D2772C /* ZZShaderTypes.h */,
+			);
+			path = Demo11;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -114,7 +132,7 @@
 			);
 			name = AppleMetalUseDemos;
 			productName = AppleMetalUseDemos;
-			productReference = F427E47424ED823A00D2772C /* AppleMetalUseDemos.app */;
+			productReference = F427E47424ED823A00D2772C /* MetalCode.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -168,10 +186,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F427E47F24ED823A00D2772C /* ViewController.m in Sources */,
+				F427E49824EEA6DA00D2772C /* ZZRender1.m in Sources */,
 				F427E47924ED823A00D2772C /* AppDelegate.m in Sources */,
 				F427E49424ED82E300D2772C /* ZZRender.m in Sources */,
 				F427E48A24ED824200D2772C /* main.m in Sources */,
 				F427E47C24ED823A00D2772C /* SceneDelegate.m in Sources */,
+				F427E49A24EEA7E200D2772C /* ZZShader.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,12 +334,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BKB2W89RHK;
 				INFOPLIST_FILE = AppleMetalUseDemos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.AppleMetalUseDemos;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MetalCode;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -331,12 +352,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BKB2W89RHK;
 				INFOPLIST_FILE = AppleMetalUseDemos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.AppleMetalUseDemos;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MetalCode;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

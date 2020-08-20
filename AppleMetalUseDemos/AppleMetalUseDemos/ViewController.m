@@ -8,11 +8,12 @@
 
 #import "ViewController.h"
 #import "Demo00/Render/ZZRender.h"
-
+#import "Demo11/ZZRender1.h"
 @interface ViewController ()
 {
     MTKView *_mtkView;
     ZZRender *_render;
+    ZZRender1 *_render1;
 }
 @end
 
@@ -27,8 +28,12 @@
         NSLog(@"device create failed !!!");
         return;
     }
-    _render = [[ZZRender alloc]initMatalWithMKView:_mtkView];
-    _mtkView.delegate = _render;
+//    _render = [[ZZRender alloc]initMatalWithMKView:_mtkView];
+//    _mtkView.delegate = _render;
+    _render1 = [[ZZRender1 alloc]initWithMKView:_mtkView];
+    _mtkView.delegate = _render1;
+    
+    [_render1 mtkView:_mtkView drawableSizeWillChange:_mtkView.drawableSize];
 }
 
 
