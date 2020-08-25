@@ -8,7 +8,7 @@
 
 #include <metal_stdlib>
 using namespace metal;
-#import "ZZShaderTypes.h"
+#import "../ZZShaderTypes.h"
 
 // 顶点着色器输出和片段着色器输入
 //结构体

@@ -16,7 +16,17 @@ typedef enum ZZVertexInputIndex
     ZZVertexInputIndexVertices     = 0,
     //视图大小
     ZZVertexInputIndexViewportSize = 1,
+    
+    ZZVertexInputIndexVertices22    = 2,
+    ZZVertexInputIndexViewportSize22 = 3,
+    
 } ZZVertexInputIndex;
+
+//纹理索引
+typedef enum CCTextureIndex
+{
+    ZZTextureIndexBaseColor = 0
+}ZZTextureIndex;
 
 
 //结构体: 顶点/颜色值
@@ -35,5 +45,19 @@ typedef struct
 typedef struct {
     float red, green, blue, alpha;
 } Color;
+
+//结构体: 顶点/颜色值
+typedef struct
+{
+    vector_float2 position;
+    vector_float4 color;
+} ZZVertex2;
+
+typedef struct
+{
+    vector_float2 position;
+    vector_float2 textureCoordinate;
+} ZZVertex3;
+
 
 #endif /* ZZShaderTypes_h */

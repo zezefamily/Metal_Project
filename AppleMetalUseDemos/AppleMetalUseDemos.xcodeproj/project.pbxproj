@@ -17,6 +17,8 @@
 		F427E49424ED82E300D2772C /* ZZRender.m in Sources */ = {isa = PBXBuildFile; fileRef = F427E49324ED82E300D2772C /* ZZRender.m */; };
 		F427E49824EEA6DA00D2772C /* ZZRender1.m in Sources */ = {isa = PBXBuildFile; fileRef = F427E49724EEA6DA00D2772C /* ZZRender1.m */; };
 		F427E49A24EEA7E200D2772C /* ZZShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = F427E49924EEA7E200D2772C /* ZZShader.metal */; };
+		F427E4A724F536D500D2772C /* ZZRender2.m in Sources */ = {isa = PBXBuildFile; fileRef = F427E4A624F536D500D2772C /* ZZRender2.m */; };
+		F427E4A924F53E1200D2772C /* ZZShader2.metal in Sources */ = {isa = PBXBuildFile; fileRef = F427E4A824F53E1200D2772C /* ZZShader2.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,9 @@
 		F427E49724EEA6DA00D2772C /* ZZRender1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZRender1.m; sourceTree = "<group>"; };
 		F427E49924EEA7E200D2772C /* ZZShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ZZShader.metal; sourceTree = "<group>"; };
 		F427E49B24EEAA3C00D2772C /* ZZShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZShaderTypes.h; sourceTree = "<group>"; };
+		F427E4A524F536D500D2772C /* ZZRender2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZRender2.h; sourceTree = "<group>"; };
+		F427E4A624F536D500D2772C /* ZZRender2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZRender2.m; sourceTree = "<group>"; };
+		F427E4A824F53E1200D2772C /* ZZShader2.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ZZShader2.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +75,7 @@
 		F427E47624ED823A00D2772C /* AppleMetalUseDemos */ = {
 			isa = PBXGroup;
 			children = (
+				F427E4A424F536B200D2772C /* Demo22 */,
 				F427E49524EEA6C200D2772C /* Demo11 */,
 				F427E49024ED82CA00D2772C /* Demo00 */,
 				F427E47724ED823A00D2772C /* AppDelegate.h */,
@@ -78,6 +84,7 @@
 				F427E47B24ED823A00D2772C /* SceneDelegate.m */,
 				F427E47D24ED823A00D2772C /* ViewController.h */,
 				F427E47E24ED823A00D2772C /* ViewController.m */,
+				F427E49B24EEAA3C00D2772C /* ZZShaderTypes.h */,
 				F427E48024ED823A00D2772C /* Main.storyboard */,
 				F427E48324ED824200D2772C /* Assets.xcassets */,
 				F427E48524ED824200D2772C /* LaunchScreen.storyboard */,
@@ -110,9 +117,18 @@
 				F427E49924EEA7E200D2772C /* ZZShader.metal */,
 				F427E49624EEA6DA00D2772C /* ZZRender1.h */,
 				F427E49724EEA6DA00D2772C /* ZZRender1.m */,
-				F427E49B24EEAA3C00D2772C /* ZZShaderTypes.h */,
 			);
 			path = Demo11;
+			sourceTree = "<group>";
+		};
+		F427E4A424F536B200D2772C /* Demo22 */ = {
+			isa = PBXGroup;
+			children = (
+				F427E4A524F536D500D2772C /* ZZRender2.h */,
+				F427E4A624F536D500D2772C /* ZZRender2.m */,
+				F427E4A824F53E1200D2772C /* ZZShader2.metal */,
+			);
+			path = Demo22;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,7 +204,9 @@
 				F427E47F24ED823A00D2772C /* ViewController.m in Sources */,
 				F427E49824EEA6DA00D2772C /* ZZRender1.m in Sources */,
 				F427E47924ED823A00D2772C /* AppDelegate.m in Sources */,
+				F427E4A924F53E1200D2772C /* ZZShader2.metal in Sources */,
 				F427E49424ED82E300D2772C /* ZZRender.m in Sources */,
+				F427E4A724F536D500D2772C /* ZZRender2.m in Sources */,
 				F427E48A24ED824200D2772C /* main.m in Sources */,
 				F427E47C24ED823A00D2772C /* SceneDelegate.m in Sources */,
 				F427E49A24EEA7E200D2772C /* ZZShader.metal in Sources */,
