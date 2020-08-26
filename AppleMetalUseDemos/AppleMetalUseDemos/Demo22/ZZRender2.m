@@ -13,12 +13,13 @@
     id<MTLCommandQueue> _commandQueue;
     id<MTLDevice> _device;
     id<MTLRenderPipelineState> _renderPipelineState;
+    //视口
     vector_uint2 _viewportSize;
     //顶点个数
     NSInteger _numVertices;
     //顶点缓存区
     id<MTLBuffer> _vertexBuffer;
-    
+    //纹理
     id<MTLTexture> _texTure;
 }
 
@@ -39,16 +40,16 @@
         pipelineDes.label = @"pipelineDes";
         pipelineDes.vertexFunction = vertexFunc;
         pipelineDes.fragmentFunction = fragmentFunc;
-        pipelineDes.colorAttachments[0].pixelFormat = MTLPixelFormatBGRA8Unorm_sRGB;
+        pipelineDes.colorAttachments[0].pixelFormat = mtkView.colorPixelFormat;
         NSError *error0;
         _renderPipelineState = [_device newRenderPipelineStateWithDescriptor:pipelineDes error:&error0];
         if(error0){
             NSLog(@"_renderPipelineStatec 创建失败");
             return nil;
         }
-        
+        //初始化顶点
         [self setupVertex];
-        
+        //初始化纹理
         [self setupTexturePNG];
 //        //构造一些顶点假数据
 //        NSData *vertexData = [ZZRender2 generateVertexData];
@@ -63,15 +64,18 @@
 
 - (void)setupTexturePNG
 {
-    UIImage *image = [UIImage imageNamed:@"kun"];
+    UIImage *image = [UIImage imageNamed:@"launchIcon"];
     MTLTextureDescriptor *textureDes = [[MTLTextureDescriptor alloc]init];
-    textureDes.pixelFormat = MTLPixelFormatRGBA8Unorm;
+    textureDes.pixelFormat = MTLPixelFormatBGRA8Unorm;
     textureDes.width = image.size.width;
     textureDes.height = image.size.height;
     _texTure = [_device newTextureWithDescriptor:textureDes];
     //MLRegion结构用于标识纹理的特定区域。 demo使用图像数据填充整个纹理；因此，覆盖整个纹理的像素区域等于纹理的尺寸。
     //4. 创建MTLRegion 结构体  [纹理上传的范围]
-    MTLRegion region = {{ 0, 0, 0 }, {image.size.width, image.size.height, 1}};
+    MTLRegion region = {
+        { 0, 0, 0 },
+        {image.size.width, image.size.height, 1}
+    };
     Byte *imageData = [self loadImage:image];
     if(imageData != nil){
         [_texTure replaceRegion:region mipmapLevel:0 withBytes:imageData bytesPerRow:image.size.width * 4];
@@ -85,14 +89,13 @@
     //1.根据顶点/纹理坐标建立一个MTLBuffer
     static const ZZVertex3 quadVertices[] = {
         //像素坐标,纹理坐标
-        { {  250,  -250 },  { 1.f, 0.f } },
-        { { -250,  -250 },  { 0.f, 0.f } },
-        { { -250,   250 },  { 0.f, 1.f } },
+        { {  10,  -10 },  { 1.f, 0.f } },
+        { { -10,  -10 },  { 0.f, 0.f } },
+        { { -10,   10 },  { 0.f, 1.f } },
         
-        { {  250,  -250 },  { 1.f, 0.f } },
-        { { -250,   250 },  { 0.f, 1.f } },
-        { {  250,   250 },  { 1.f, 1.f } },
-        
+        { {  10,  -10 },  { 1.f, 0.f } },
+        { { -10,   10 },  { 0.f, 1.f } },
+        { {  10,   10 },  { 1.f, 1.f } },
     };
     
     //2.创建我们的顶点缓冲区，并用我们的Qualsits数组初始化它
@@ -147,7 +150,6 @@
 {
     id<MTLCommandBuffer> _commandBuffer = [_commandQueue commandBuffer];
     _commandBuffer.label = @"_commandBuffer";
-    
     MTLRenderPassDescriptor *renderPassDes = view.currentRenderPassDescriptor;
     if(renderPassDes != nil){
         id<MTLRenderCommandEncoder> renderCommandEnconder = [_commandBuffer renderCommandEncoderWithDescriptor:renderPassDes];
@@ -156,18 +158,13 @@
         [renderCommandEnconder setRenderPipelineState:_renderPipelineState];
         [renderCommandEnconder setVertexBuffer:_vertexBuffer offset:0 atIndex:ZZVertexInputIndexVertices22];
         [renderCommandEnconder setVertexBytes:&_viewportSize length:sizeof(_viewportSize) atIndex:ZZVertexInputIndexViewportSize22];
+        [renderCommandEnconder setFragmentTexture:_texTure atIndex:ZZTextureIndexBaseColor];
         [renderCommandEnconder drawPrimitives:MTLPrimitiveTypeTriangle vertexStart:0 vertexCount:_numVertices];
-        [renderCommandEnconder setVertexTexture:_texTure atIndex:ZZTextureIndexBaseColor];
-        
         [renderCommandEnconder endEncoding];
-        
         [_commandBuffer presentDrawable:view.currentDrawable];
-        
     }
-    
     [_commandBuffer commit];
 }
-
 
 //顶点数据
 + (nonnull NSData *)generateVertexData
