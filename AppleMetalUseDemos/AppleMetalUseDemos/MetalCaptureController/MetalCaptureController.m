@@ -158,6 +158,7 @@
         self.texture = CVMetalTextureGetTexture(tmpTexture);
         CFRelease(tmpTexture);
     }
+    
 }
 
 #pragma mark - MTKViewDelegate

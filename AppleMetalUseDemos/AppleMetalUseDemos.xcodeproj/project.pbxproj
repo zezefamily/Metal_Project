@@ -20,6 +20,7 @@
 		F427E4A724F536D500D2772C /* ZZRender2.m in Sources */ = {isa = PBXBuildFile; fileRef = F427E4A624F536D500D2772C /* ZZRender2.m */; };
 		F427E4A924F53E1200D2772C /* ZZShader2.metal in Sources */ = {isa = PBXBuildFile; fileRef = F427E4A824F53E1200D2772C /* ZZShader2.metal */; };
 		FFF41C3E24F74C8A0053AD86 /* MetalCaptureController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF41C3D24F74C8A0053AD86 /* MetalCaptureController.m */; };
+		FFF41C4224F783420053AD86 /* SampleMetalVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF41C4124F783420053AD86 /* SampleMetalVideoPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		F427E4A824F53E1200D2772C /* ZZShader2.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ZZShader2.metal; sourceTree = "<group>"; };
 		FFF41C3C24F74C8A0053AD86 /* MetalCaptureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalCaptureController.h; sourceTree = "<group>"; };
 		FFF41C3D24F74C8A0053AD86 /* MetalCaptureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MetalCaptureController.m; sourceTree = "<group>"; };
+		FFF41C4024F783420053AD86 /* SampleMetalVideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleMetalVideoPlayer.h; sourceTree = "<group>"; };
+		FFF41C4124F783420053AD86 /* SampleMetalVideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleMetalVideoPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,7 @@
 		F427E47624ED823A00D2772C /* AppleMetalUseDemos */ = {
 			isa = PBXGroup;
 			children = (
+				FFF41C3F24F783250053AD86 /* SampleMetalVideoPlayer */,
 				FFF41C3B24F74BF00053AD86 /* MetalCaptureController */,
 				F427E4A424F536B200D2772C /* Demo22 */,
 				F427E49524EEA6C200D2772C /* Demo11 */,
@@ -142,6 +146,15 @@
 				FFF41C3D24F74C8A0053AD86 /* MetalCaptureController.m */,
 			);
 			path = MetalCaptureController;
+			sourceTree = "<group>";
+		};
+		FFF41C3F24F783250053AD86 /* SampleMetalVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				FFF41C4024F783420053AD86 /* SampleMetalVideoPlayer.h */,
+				FFF41C4124F783420053AD86 /* SampleMetalVideoPlayer.m */,
+			);
+			path = SampleMetalVideoPlayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +232,7 @@
 				F427E47924ED823A00D2772C /* AppDelegate.m in Sources */,
 				F427E4A924F53E1200D2772C /* ZZShader2.metal in Sources */,
 				F427E49424ED82E300D2772C /* ZZRender.m in Sources */,
+				FFF41C4224F783420053AD86 /* SampleMetalVideoPlayer.m in Sources */,
 				F427E4A724F536D500D2772C /* ZZRender2.m in Sources */,
 				F427E48A24ED824200D2772C /* main.m in Sources */,
 				F427E47C24ED823A00D2772C /* SceneDelegate.m in Sources */,
