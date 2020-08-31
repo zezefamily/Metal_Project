@@ -41,10 +41,11 @@ vertex RasterizerData1 vertexFunc22 (uint vertexID [[vertex_id]],constant ZZVert
     RasterizerData1 output;
     //颜色值原样输出
     output.textureCoordinate = vertices[vertexID].textureCoordinate;
+    output.clipSpacePosition = float4(vertices[vertexID].position.xy,0,1);
     //顶点标准化转换
-    float2 pixelSpacePosition = vertices[vertexID].position.xy;
-    vector_float2 viewPortSize = vector_float2(*viewportSizePointer);
-    output.clipSpacePosition.xy = pixelSpacePosition/(viewPortSize/2.0);
+//    float2 pixelSpacePosition = vertices[vertexID].position.xy;
+//    vector_float2 viewPortSize = vector_float2(*viewportSizePointer);
+//    output.clipSpacePosition.xy = pixelSpacePosition/(viewPortSize/2.0);
     return output;
 }
 

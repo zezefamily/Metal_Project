@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SampleMetalVideoPlayer : UIView
-
+- (void)openSourceWithURL:(NSURL *)URL;
 @end
 
 NS_ASSUME_NONNULL_END

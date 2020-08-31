@@ -28,10 +28,8 @@
     if(self == [super init]){
         
         mtkView.colorPixelFormat = MTLPixelFormatBGRA8Unorm_sRGB;
-        
         _device = mtkView.device;
         _commandQueue = [_device newCommandQueue];
-        
         id<MTLLibrary> library = [_device newDefaultLibrary];
         id<MTLFunction> vertexFunc = [library newFunctionWithName:@"vertexFunc22"];
         id<MTLFunction> fragmentFunc = [library newFunctionWithName:@"fragmentFunc22"];
@@ -87,15 +85,25 @@
 -(void)setupVertex
 {
     //1.根据顶点/纹理坐标建立一个MTLBuffer
+//    static const ZZVertex3 quadVertices[] = {
+//        //像素坐标,纹理坐标
+//        { {  10,  -10 },  { 1.f, 0.f } },
+//        { { -10,  -10 },  { 0.f, 0.f } },
+//        { { -10,   10 },  { 0.f, 1.f } },
+//
+//        { {  10,  -10 },  { 1.f, 0.f } },
+//        { { -10,   10 },  { 0.f, 1.f } },
+//        { {  10,   10 },  { 1.f, 1.f } },
+//    };
     static const ZZVertex3 quadVertices[] = {
         //像素坐标,纹理坐标
-        { {  10,  -10 },  { 1.f, 0.f } },
-        { { -10,  -10 },  { 0.f, 0.f } },
-        { { -10,   10 },  { 0.f, 1.f } },
+        { {  1,  -1 },  { 1.f, 0.f } },
+        { { -1,  -1 },  { 0.f, 0.f } },
+        { { -1,   1 },  { 0.f, 1.f } },
         
-        { {  10,  -10 },  { 1.f, 0.f } },
-        { { -10,   10 },  { 0.f, 1.f } },
-        { {  10,   10 },  { 1.f, 1.f } },
+        { {  1,  -1 },  { 1.f, 0.f } },
+        { { -1,   1 },  { 0.f, 1.f } },
+        { {  1,   1 },  { 1.f, 1.f } },
     };
     
     //2.创建我们的顶点缓冲区，并用我们的Qualsits数组初始化它
